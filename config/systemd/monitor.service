@@ -1,0 +1,15 @@
+[Unit]
+Description=Application Reliability Monitor & Auto-Healing System
+After=network.target postgresql.service redis.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/monitor_system
+EnvironmentFile=/opt/monitor_system/.env
+ExecStart=/usr/bin/python3 -m monitor.main
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

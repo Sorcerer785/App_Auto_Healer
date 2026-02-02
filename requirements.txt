@@ -1,0 +1,6 @@
+psutil
+redis
+psycopg2-binary
+ping3
+python-dotenv
+pytest
